@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BMI Tracker</h1>
+        <button id="theme-toggle" aria-label="Toggle dark mode">Switch to Dark Theme</button>
+    </header>
+    <main>
+        <section id="bmi-form-section">
+            <form id="bmi-form">
+                <fieldset>
+                    <legend>Enter Your Details</legend>
+                    <label for="unit">Unit:</label>
+                    <select id="unit">
+                        <option value="metric">Metric (cm, kg)</option>
+                        <option value="imperial">Imperial (in, lb)</option>
+                    </select>
+                    <label for="height">Height:</label>
+                    <input type="number" id="height" placeholder="Enter your height" required>
+                    <label for="weight">Weight:</label>
+                    <input type="number" id="weight" placeholder="Enter your weight" required>
+                    <label for="body-fat">Body Fat Percentage (optional):</label>
+                    <input type="number" id="body-fat" placeholder="Enter body fat percentage">
+                    <button type="submit">Calculate BMI</button>
+                </fieldset>
+            </form>
+        </section>
+        <section id="result-section">
+            <div id="result">
+                <p id="bmi-value" aria-live="polite"></p>
+                <p id="bmi-category" aria-live="polite"></p>
+            </div>
+            <div id="bmi-chart-container">
+                <canvas id="bmi-chart" width="400" height="200"></canvas>
+            </div>
+        </section>
+        <footer>
+            <button id="save-profile">Save Profile</button>
+            <button id="view-history">View History</button>
+            <button id="scroll-top" style="display: none;" aria-label="Scroll to top">Scroll to Top</button>
+            <button id="help-button" aria-label="Help">Help</button>
+            <div id="help-tooltip" style="display:none;">
+                <p>Enter your height and weight to calculate your BMI. You can switch units between metric and imperial.</p>
+            </div>
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
